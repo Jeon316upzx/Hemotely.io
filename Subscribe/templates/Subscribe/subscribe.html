@@ -1,0 +1,23 @@
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+{% load static %}
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html>
+{% include 'Home/header.html' %}
+
+
+<body>
+  <form method="post" action="{% url 'suburl' %}" class="form-inline">
+  			 {% csrf_token %}
+  			 {{ form }}
+  			 <button type="submit" class="btn btn-primary">Subscribe</button>
+  			 {% for m in messages %}
+  			 <div class="alert alert-success"> <a class ="close" href="#" data-dismiss="alert">x</a>
+  				 {{m}}</div>
+  			 {% endfor %}
+  </form>
+</body>
+
+</html>

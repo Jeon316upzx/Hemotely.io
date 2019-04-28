@@ -1,0 +1,59 @@
+{% load fontawesome %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+<!DOCTYPE html>
+<html>
+{% include 'Home/header.html' %}
+
+<body>
+{% include 'Home/navbar.html' %}
+
+<div class="container">
+<div class="row jobrow">
+<div class="col-md-6">
+  <form method="post" action="{% url 'jobupload' %}" class="form-control" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{form}}
+      <button type="submit" class="btn btn-primary  btn-block">Post a Job   <span> N500</span> </button>
+    </form>
+</div>
+
+<div class="col-md-6">
+  <div class="about">
+  <h1>Hemotely</h1>
+  <p>Expand your talent pool and get the best remote workers all around the world.</p>
+  <p>With over 80 days duration per post</p>
+  <p> and over 100 Subscribers</p>
+  <p>get over 300 right applicants with us. </p>
+</div>
+
+<div class="workwithus">
+  <h2> Companies seeking remote talent with us </h2>
+   {% for j in jobs %}
+   <div>
+    <img src="{{ j.companyLogo.url}}" class="img-circle" height="50" width="50">
+  </div>
+   {% endfor %}
+
+</div>
+
+
+<footer class="myfooter">
+  <p class="contacts">Contacts</p>
+    <address>No 10 G.M.O Avenue Oduke Okwe estate,Delta state, Nigeria</address>
+    <p class="mobile">(+234)8115891675</p>
+    <p class="email"><a href="mailto:Hemotely.ng@gmail.com">Hemotely.ng@gmail.com</a></p>
+    {% fontawesome_icon 'twitter' color='pale-blue' large=True %}
+    {% fontawesome_icon 'instagram' color='brown' large=True  %}
+    {% fontawesome_icon 'facebook' color='blue' large=True  %}
+</footer>
+
+</div>
+
+
+
+</div>
+</div>
+</body>
+</html>

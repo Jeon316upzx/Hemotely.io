@@ -1,0 +1,21 @@
+
+{% load static %}
+{% load static from staticfiles %}
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<title> Hemotely </title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="/static/email.css">
+</head>
+<body class="mybody">
+<p>Hey, {{ s.Name }}!</P>
+  <p>Great to have you here, you are getting this email because you subscribed to our daily hemotely job blasts.</p>
+
+
+  <p><strong>If you didn't Subscribe at all, feel free to unsubscribe by clicking on this link:</strong></p>
+  <p><strong>Thank you for choosing us, Hemotely.</strong></p>
+</body>
+</html>

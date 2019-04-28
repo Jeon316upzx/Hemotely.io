@@ -1,0 +1,155 @@
+{% extends 'Home/base_layout.html' %}
+{% load fontawesome %}
+
+{% block content %}
+	 <section class="jumbotron text-center jumbotron-custom">
+		 <div class="container FadeInDown animated">
+			 <h1 class="jumbotron-heading">Hemotely</h1>
+			 <p class="lead text-muted">Hiring Remotely</p>
+			 <p class="lead text-muted">Connect with over 100,000 remote workers all around the world</p>
+			 <form method="GET" action="" role="search">
+            <div class="form-group">
+                    <input type="text" name = 'q' class="form-control" placeholder="search remote jobs" value='{{request.Get.q}}'>
+						</div>
+
+			 </form>
+
+		 </div>
+	 </section>
+	 {% endblock %}
+<hr>
+{% block mysub %}
+<section class="text-center">
+
+<p></p>
+
+
+
+
+<!-- <div class="container">
+	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target ="#modal-1">Subscribe</button>
+	{% for m in messages %}
+	<div class="alert alert-success"> <a class ="close" href="#" data-dismiss="alert">x</a>
+		{{m}}</div>
+	{% endfor %}
+	<div class="modal" id ="modal-1" tabindex="-1" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Modal title</h4>
+					<button type="button" class="close" data-dismiss="modal"> &times;</button>
+				</div>
+				<div class="modal-body">
+					<form method="post" action="{% url 'suburl' %}" class="form-inline">
+								 {% csrf_token %}
+								 {{form}}
+								 <button class="btn btn-primary" type="submit">Okay</button>
+
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">close</button>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div> -->
+<!-- <form method="post" action="{% url 'suburl' %}" class="form-inline">
+			 {% csrf_token %}
+			 {{ form }}
+			 <button type="submit" class="btn btn-primary">Subscribe</button>
+			 {% for m in messages %}
+			 <div class="alert alert-success"> <a class ="close" href="#" data-dismiss="alert">x</a>
+				 {{m}}</div>
+			 {% endfor %}
+</form> -->
+</section>
+{% endblock %}
+<hr>
+
+
+
+{% block jobs %}
+
+<h1 class="text-center">Now Hiring</h1>
+
+<div class="job-section">
+   {% for mj in myjob %}
+<div class="container">
+	 <div class="panel-group" id="accordion">
+    		   <div class="panel panel-default">
+    		       <div class="panel-heading">
+    		           <div class="panel-title">
+                    <div class="row">
+                        <div class="col-md-2">
+
+													<img src="{{mj.companyLogo.url}}" class="myImages img-circle" height="70px" width="70px">
+
+
+
+												</div>
+
+												<div class="col-md-4">
+													<h5 class="mytitle"> <a href="#content{{forloop.counter}}" data-toggle="collapse" data-parent="#accordion">
+														{{mj.companyName}}
+														</a>
+													</h5>
+													<h4 class="myposition">{{mj.position}}</h4>
+
+													<h6 class="workopt">{{mj.category}}</h6>
+
+												</div>
+
+												<div class="col-md-6">
+													{% for l in mj.location %}
+                          <h5 class="posteddate">{% fontawesome_icon 'map-marker' color='pale-blue' %} {{l.name}}</h5>
+                          {% endfor %}
+													<h5 class="expirydate"> {{mj.postedDate|timesince}}</h5>
+
+												</div>
+
+										</div>
+    		           </div>
+    		       </div>
+
+    		       <div class="panel-collapse collapse" id="content{{forloop.counter}}">
+    		         <div class="panel-body">
+    		              <div class="resp">
+												<p class="resp-header"> Job Responsiblities</P>
+													<ul class="resp-ul">
+												     <li class="resp-li">{{mj.jobResp}}</li>
+											    </ul>
+											</div>
+
+											<div class="desc">
+												<p class="desc-header"> Job Description</p>
+												<ul class="desc-ul">
+													<li class="desc-li">
+												{{mj.jobDesc}} </li>
+											  </ul>
+											</div>
+
+											<div class="req">
+												<p class="req-header"> Job Requirements</p>
+												<ul class="req-ul">
+													<li class="req-li">
+												{{mj.jobReq}}</li>
+											</ul>
+											</div>
+
+										<a href="{{ mj.companyApplyUrl }}" target="_blank">	<button type="button" class="btn  btn-primary">Apply</button></a>
+    		         </div>
+
+    		       </div>
+
+    		   </div>
+
+    		</div>
+</div>
+
+	 {% endfor %}
+
+</div>
+
+{% endblock %}

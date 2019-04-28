@@ -1,0 +1,130 @@
+.navbar-custom{
+
+    background-color: white;
+    position: sticky;
+    top: 0;
+
+}
+.jumbotron-custom{
+  background-image: url("/static/raw.jpg");
+  height: 400px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+}
+
+
+.remoteworld img{
+  /* margin: auto;
+  display: block; */
+
+}
+.mybtn{
+  margin-top: 15px;
+}
+
+
+
+
+.mytitle{
+text-transform: capitalize;
+}
+.myposition{
+text-transform: capitalize;
+}
+.posteddate{
+  font-weight: bold;
+}
+.expirydate{
+  font-weight: bold;
+}
+.workopt{
+  text-transform: lowercase;
+  font-weight: lighter;
+}
+.row1{
+  text-align: center;
+}
+.row2{
+  text-align: center;
+}
+.remoteworld-p1{
+  font-weight: bold;
+}
+.remoteworld-p2{
+  font-weight: bold;
+}
+.remoteworld-p3{
+  font-weight: bold;
+}
+.remoteworld-p4{
+  font-weight: bold;
+}
+.myfooter{
+  text-align: center;
+  font-weight: bold;
+  bottom:0;
+  position: relative;
+}
+.contacts{
+  font-weight: bolder;
+}
+.resp-header{
+  text-align:justify;
+  font-weight: bold;
+  font-size: 17px;
+}
+.desc-header{
+  text-align:justify;
+  font-weight: bold;
+  font-size: 17px;
+}
+.req-header{
+  text-align:justify;
+  font-weight: bold;
+  font-size: 17px;
+}
+.req-li{
+  text-align: justify;
+}
+.resp-li{
+  text-align: justify;
+}
+.desc-li{
+  text-align: justify;
+}
+
+/* .myTags
+{
+
+  float:inherit;
+ display: inline;
+  text-decoration: none;
+  border-bottom: 1px,#000;
+
+
+} */
+
+.upload{
+  background-color: white;
+}
+
+.col-md-6{
+ background-color: white;
+}
+.col-md-6 p h1{
+  text-align: center;
+}
+.jobrow{
+
+}
+.myfooter{
+  text-align: center;
+}
+.about{
+  text-align: center;
+}
+.workwithus{
+  text-align: center;
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title> Hemotely </title>
+</head>
+<body>
+<p>Hello, dear {{ f.companyEmail }}!</P>
+  <p>Here are details of the Job you posted on Hemotely.</p>
+  <p><strong> Job position : {{ f.position }} </strong></p>
+  <p><strong> Name of company : {{ f.companyName }}</strong></p>
+  <p><strong>Company apply url :  {{ f.companyApplyUrl }} </strong></p>
+  <p><strong>Job Responsiblities: {{ f.jobResp }} </strong></p>
+  <p><strong>Job Requirements: {{ f.jobReq }} </strong></p>
+  <p><strong>Job Summary: {{ f.jobDesc }} </strong></p>
+
+  <p><strong>Location: {{ f.location.name }} </strong></p>
+
+  <p><strong>Posted on: {{ f.postedDate }}</strong></p>
+  <p><strong>Post expires on: {{ f.postExpire }} </strong></p>
+
+  <p><strong>Track your post url:</strong></p>
+  <p><strong>Thank you for choosing us, Hemotely!</strong></p>
+</body>
+</html>

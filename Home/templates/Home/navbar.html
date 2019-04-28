@@ -1,0 +1,25 @@
+<!-- {% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}-->
+{% load static %}
+{% load static from staticfiles %}
+<nav class="navbar navbar-default navbar-custom" role="navigation">
+  <div class="container">
+        <div class="navbar-header">
+          <a href="{% url 'home' %}" class="navbar-brand"> <img src="{% static 'hemotelyicon.svg'%}"  height="auto" width="100px"></a>
+        </div>
+     {% if context_instance.context_name == "home" %}
+        <div class="btn-group">
+        <a href ="{% url 'jobupload' %}"<button class="btn btn-danger">Post</button></a>
+          <a href ="{% url 'suburl' %}"<button class="btn btn-primary">Subscribe</button></a>
+        </div>
+      {% elif context_instance.context_name == "jobupload" %}
+
+       <a href ="{% url 'suburl' %}"<button class="btn btn-primary">Subscribe</button></a>
+
+       {% endif %}
+
+  </div>
+
+
+</nav>

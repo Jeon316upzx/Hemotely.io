@@ -1,0 +1,17 @@
+Hello, dear {{ f.companyEmail }}!.
+Here are details of the Job you posted on Hemotely.
+
+Job position : {{ f.position }}
+Name of company : {{ f.companyName }}
+Company apply url :  {{ f.companyApplyUrl }}
+Job Responsiblities: {{ f.jobResp }}
+Job Requirements: {{ f.jobReq }}
+Job Summary: {{ f.jobDesc }}
+
+Location: {{ f.location.name }}
+Posted on: {{ f.postedDate }}
+Post expires on: {{ f.postExpire }}
+
+Track your post url:
+
+Thank you for choosing us, Hemotely!
